@@ -47,16 +47,13 @@ funfact={'Alabama': 'This state contains many significant landmarks from the Civ
 'West Virginia': 'This state was formed when it split from another state in order to avoid joining the Confederacy.',
  'Wisconsin': 'This state is nicknamed America’s Dairyland.', 'Wyoming': 'Yellowstone National Park is located in this state.'}
 
-response = requests.get('https://en.wikipedia.org/wiki/50_State_quarters')
-soup=BeautifulSoup(response.text, "html.parser")
-list_of_tables=soup.find_all('table')
-quarter_table=list_of_tables[1]
-tds_list = quarter_table.find_all('img')
-states=(re.findall('<img alt="(.*?) quarter', str(tds_list)))
-year = quarter_table.find_all('small')
-year=[item.text.strip('()') for item in year][1:]
 
 
+
+states=['Delaware', 'Pennsylvania', 'New Jersey', 'Georgia', 'Connecticut', 'Massachusetts', 'Maryland', 'South Carolina', 'New Hampshire', 'Virginia', 'New York', 'North Carolina', 
+'Rhode Island', 'Vermont', 'Kentucky', 'Tennessee', 'Ohio', 'Louisiana', 'Indiana', 'Mississippi', 'Illinois', 'Alabama', 'Maine', 'Missouri', 'Arkansas', 'Michigan', 'Florida', 'Texas', 
+'Iowa', 'Wisconsin', 'California', 'Minnesota', 'Oregon', 'Kansas', 'West Virginia', 'Nevada', 'Nebraska', 'Colorado', 'North Dakota', 'South Dakota', 'Montana', 'Washington', 'Idaho', 'Wyoming', 
+'Utah', 'Oklahoma', 'New Mexico', 'Arizona', 'Alaska', 'Hawaii']
 
 
 reigondict={"Connecticut":"New England","Maine":"New England","Massachusetts":"New England","New Hampshire":"New England","Rhode Island":"New England","Vermont":"New England",
@@ -163,7 +160,7 @@ class Grid(QtWidgets.QWidget):
 		self.enterstate.returnPressed.connect(self.button1_clicked)
 		self.hlay2.addWidget(self.Button)
 
-		self.refresh=QPushButton("Refresh")
+		self.refresh=QPushButton("Next")
 		self.refresh.setStyleSheet("font: bold; font-size: 125%; background-color: white")
 		self.refresh.clicked.connect(self.button2_clicked)        
 		self.hlay2.addWidget(self.refresh)
