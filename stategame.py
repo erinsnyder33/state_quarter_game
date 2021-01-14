@@ -135,7 +135,7 @@ class Grid(QtWidgets.QWidget):
 		self.vlay1.addWidget(self.hint2)
 
 		self.label = QtWidgets.QLabel()
-		self.pixmap = QtGui.QPixmap(os.path.join(iconroot, f"state{self.random50[self.index]}.png"))
+		self.pixmap = QtGui.QPixmap(os.path.join(iconroot, f"images/state{self.random50[self.index]}.png"))
 
 
 		self.label.resize(700, 700)
@@ -249,12 +249,12 @@ class Grid(QtWidgets.QWidget):
 		self.enterstate.setText("") 
 
 		if self.index<50:
-			self.pixmap = QtGui.QPixmap(os.path.join(iconroot, f"state{self.random50[self.index]}.png"))
+			self.pixmap = QtGui.QPixmap(os.path.join(iconroot, f"images/state{self.random50[self.index]}.png"))
 
 		#endscreen
 		if self.index>=50:
 			self.attempts.deleteLater()
-			self.pixmap = QtGui.QPixmap(os.path.join(iconroot, "complete.png"))
+			self.pixmap = QtGui.QPixmap(os.path.join(iconroot, "images/complete.png"))
 			self.Button.deleteLater()
 			self.refresh.deleteLater()
 			self.hint.hide()

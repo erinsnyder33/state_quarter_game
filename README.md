@@ -9,3 +9,7 @@ The game cycles randomly through all 50 quarters and gives the user 5 chances to
 After two incorrect guesses, a hint is provided about the states geographic location. After three incorrect guesses, another hint is given. After five incorrect guesses, the guessing textbox becomes disabled and the correct answer is displayed. Hit the “Next” button to display the next state quarter.
 
 The user gets 100 points for getting the state correct on the first try, 75 for the second try, 50 for the third try, 25 for the fourth try, and 5 for the fifth try. 
+
+
+![GitHub Logo](/images/state22.png)
+Format: ![State quarter example](url)
